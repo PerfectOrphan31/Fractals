@@ -1,0 +1,5 @@
+.default-color1.chart-symbol{ /*solid circle*/
+    -fx-background-color: #502472;
+    -fx-background-radius: 1px;
+    -fx-padding: 1px;
+}

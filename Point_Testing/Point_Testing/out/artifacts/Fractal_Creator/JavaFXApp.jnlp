@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApp.jnlp">
+  <information>
+    <title>Fractal Creator</title>
+    <vendor>Unknown</vendor>
+    <description>Fractal Creator</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApp.jar" size="151988" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="1800" height="1200" main-class="sample.Main"  name="Fractal Creator" />
+  <update check="background"/>
+</jnlp>
