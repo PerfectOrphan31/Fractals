@@ -76,14 +76,14 @@ public class Main extends Application {
             }else if(i>0) {
                 if (x < xmin){
                     xmin = x;
-            }
+                }
                 else if (x > xmax){
                     xmax = x;
-            }
+                }
                 if (y < ymin){
                     ymin = y;
-            }
-                if(y>ymax) {
+                }
+                else if(y > ymax){
                     ymax = y;
                 }
             }
@@ -109,8 +109,8 @@ public class Main extends Application {
                 startpoint2D.add(new Point2D(x, y));
             }
         }
-        for (Point2D i:startpoint2D) {
-            retdat.getData().add(new XYChart.Data<>(i.getX(),i.getY()));
+        for (Point2D p2d : startpoint2D) {
+            retdat.getData().add(new XYChart.Data<>(p2d.getX(),p2d.getY()));
         }
         return retdat;
     }
@@ -118,21 +118,21 @@ public class Main extends Application {
     private XYChart.Series<Number,Number> draw(int num){
         XYChart.Series<Number,Number> retdat = new XYChart.Series<>();
         double diff = 2.0;
-        for(int i =0; i<pointsize;i++)
+        for(int i = 0; i < pointsize; i++)
         if (currPoint.isEmpty()){
             currPoint.add(new Point2D(rand.nextDouble()*100,rand.nextDouble()*100));
         }else{
             int dir = rand.nextInt(num);
-            for(int m=0; m<num; m++){
-                if(m==dir) {
+            for(int m = 0; m < num; m++){
+                if(m == dir) {
                     double x = (startpoint2D.get(m).getX() - currPoint.get(i - 1).getX()) / diff + currPoint.get(i - 1).getX();
                     double y = (startpoint2D.get(m).getY() - currPoint.get(i - 1).getY()) / diff + currPoint.get(i - 1).getY();
-                    currPoint.add(new Point2D(x,y));
+                    currPoint.add(new Point2D(x, y));
                 }
             }
         }
-        for (Point2D j:currPoint){
-            retdat.getData().add(new XYChart.Data<>(j.getX(),j.getY()));
+        for (Point2D p2d : currPoint){
+            retdat.getData().add(new XYChart.Data<>(p2d.getX(),p2d.getY()));
         }
         return retdat;
     }
